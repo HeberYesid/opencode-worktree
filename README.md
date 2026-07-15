@@ -35,12 +35,6 @@ bun install
 
 Restart opencode — the plugin loads automatically.
 
-### Option B — npm (coming soon)
-
-```bash
-cd ~/.config/opencode
-bun add opencode-worktree
-```
 
 ## Configuration
 

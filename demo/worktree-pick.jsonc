@@ -1,0 +1,27 @@
+{
+  // Demo: Configuracion del plugin opencode-worktree
+  // Este archivo se crea automaticamente en .opencode/worktree-pick.jsonc
+  
+  // Terminal por defecto (key del objeto "terminals")
+  "defaultTerminal": "wt",
+  
+  // Ruta base para worktrees (null = ruta por defecto del sistema)
+  // Windows: ~/opencode-worktrees
+  // macOS/Linux: ~/.local/share/opencode/worktree
+  "worktreePath": null,
+  
+  // Templates de terminales. {cwd} = ruta del worktree, {cmd} = comando inicial.
+  "terminals": {
+    // Windows Terminal (default tab)
+    "wt": ["wt.exe", "-d", "{cwd}", "cmd", "/k", "{cmd}"],
+    
+    // Windows Terminal (perfil "Dev")
+    "wt-dev": ["wt.exe", "-p", "Dev", "-d", "{cwd}", "cmd", "/k", "{cmd}"],
+    
+    // PowerShell 7
+    "pwsh": ["pwsh.exe", "-NoExit", "-Command", "Set-Location \"{cwd}\"; {cmd}"],
+    
+    // Command Prompt
+    "cmd": ["cmd.exe", "/c", "start", "", "cmd", "/k", "cd /d \"{cwd}\" && {cmd}"]
+  }
+}
